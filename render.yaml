@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: my-worker
+    env: docker
+    dockerfilePath: ./Dockerfile
+    startCommand: python3 main.py
+    envVars:
+      - key: BUILDPACK_URL
+        value: https://github.com/heroku/heroku-buildpack-activestorage-preview
+      - key: APT_BUILDPACK
+        value: https://github.com/heroku/heroku-buildpack-apt

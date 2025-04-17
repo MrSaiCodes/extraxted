@@ -1,11 +1,7 @@
 services:
-  - type: worker
-    name: my-worker
+  - type: web
+    name: extraxted-app
     env: docker
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: Dockerfile
+    plan: free
     startCommand: python3 main.py
-    envVars:
-      - key: BUILDPACK_URL
-        value: https://github.com/heroku/heroku-buildpack-activestorage-preview
-      - key: APT_BUILDPACK
-        value: https://github.com/heroku/heroku-buildpack-apt
